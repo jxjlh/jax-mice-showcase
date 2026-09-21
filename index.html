@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAX 小鼠 × 北京澄天生物｜JAX 中国官方代理</title>
+<style>
+  :root{
+    --navy:#0B3C74;
+    --blue:#1B84C7;
+    --orange:#E8801F;
+    --bg:#F5F7FA;
+    --line:#E3E9F0;
+    --text:#22303F;
+    --muted:#6B7A8D;
+    --white:#FFFFFF;
+    --radius:14px;
+    --shadow:0 2px 10px rgba(11,60,116,.07);
+    --shadow-hover:0 10px 24px rgba(11,60,116,.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.75;
+    font-size:15px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--blue);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1220px;margin:0 auto;padding:0 20px;}
+
+  /* ---------- 顶部导航 ---------- */
+  .topbar{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(11,60,116,.97);
+    backdrop-filter:saturate(160%) blur(6px);
+    box-shadow:0 1px 8px rgba(0,0,0,.14);
+  }
+  .topbar .wrap{
+    display:flex;align-items:center;gap:18px;
+    height:58px;
+  }
+  .brand{
+    display:flex;align-items:center;gap:10px;
+    color:#fff;font-weight:700;font-size:15px;white-space:nowrap;
+  }
+  .brand .dot{
+    width:9px;height:9px;border-radius:50%;
+    background:var(--orange);display:inline-block;
+  }
+  .navlinks{
+    display:flex;gap:4px;margin-left:auto;overflow-x:auto;
+    scrollbar-width:none;
+  }
+  .navlinks::-webkit-scrollbar{display:none;}
+  .navlinks a{
+    color:#D8E6F5;font-size:13.5px;
+    padding:7px 11px;border-radius:8px;white-space:nowrap;
+    text-decoration:none;transition:background .18s,color .18s;
+  }
+  .navlinks a:hover{background:rgba(255,255,255,.13);color:#fff;text-decoration:none;}
+
+  /* ---------- 通用板块 ---------- */
+  section{padding:62px 0;scroll-margin-top:70px;}
+  section:nth-of-type(even){background:#fff;}
+  .sec-head{margin-bottom:28px;}
+  h2{
+    font-size:25px;margin:0 0 10px;
+    color:var(--navy);letter-spacing:.3px;
+    display:flex;align-items:center;gap:12px;
+  }
+  h2::before{
+    content:"";width:5px;height:24px;border-radius:3px;
+    background:linear-gradient(180deg,var(--blue),var(--navy));
+    display:inline-block;flex:none;
+  }
+  .sub{color:var(--muted);font-size:14.5px;margin:0;}
+  .tag{
+    display:inline-block;font-size:12px;padding:2px 9px;border-radius:20px;
+    background:#EAF3FB;color:var(--blue);border:1px solid #D3E6F6;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{padding:92px 0 58px;background:linear-gradient(180deg,#EAF1F8 0%,var(--bg) 100%);}
+  .hero-grid{
+    display:grid;grid-template-columns:58fr 42fr;
+    gap:0 26px;align-items:stretch;
+  }
+  .video-box{
+    grid-column:1;align-self:start;
+    background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);
+    padding:14px;position:relative;
+  }
+  .video-frame{
+    position:relative;width:100%;padding-top:56.25%;
+    background:#0B1B2B;border-radius:10px;overflow:hidden;
+  }
+  .video-frame video{
+    position:absolute;inset:0;width:100%;height:100%;
+    display:block;background:#0B1B2B;
+  }
+  .video-loading{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    color:#8FA6BE;font-size:13.5px;pointer-events:none;text-align:center;padding:16px;
+  }
+  .video-cap{color:var(--muted);font-size:12.5px;margin:10px 2px 0;}
+
+  /* 右列：两张卡上下堆叠，flex:1 自适应填满列高（与左视频底边齐平） */
+  .hero-right{display:flex;flex-direction:column;gap:12px;min-width:0;}
+  .hero-right .card{flex:1 1 0;display:flex;flex-direction:column;padding:11px 16px;}
+  .hero-right .card h3{margin:0 0 7px;padding-bottom:6px;font-size:14px;}
+  .hero-right .card p{margin:0;font-size:13px;line-height:1.56;text-align:justify;}
+  .coop-top{
+    position:relative;display:flex;align-items:baseline;gap:9px;
+    margin-bottom:9px;padding-bottom:6px;border-bottom:1px solid var(--line);
+  }
+  .coop-card .coop-top h3{margin:0;padding:0;border:none;font-size:14px;flex:1;min-width:0;}
+  .coop-links{display:flex;align-items:baseline;gap:9px;white-space:nowrap;flex:none;}
+  .coop-src{font-size:10.7px;color:var(--blue);font-weight:600;}
+  .coop-card .en-fold{
+    background:none;border:none;border-radius:0;box-shadow:none;margin:0;overflow:visible;
+  }
+  .coop-card .en-fold summary{
+    font-size:10.7px;font-weight:600;letter-spacing:0;
+    padding:0;color:var(--navy);white-space:nowrap;
+  }
+  .coop-card .en-fold summary::after{
+    content:"＋";position:static;top:auto;right:auto;margin-left:3px;
+    font-size:11px;color:var(--blue);font-weight:400;
+  }
+  .coop-card .en-fold[open] summary::after{content:"－";}
+  .coop-card .en-fold .ans{
+    position:absolute;left:0;right:0;top:calc(100% + 8px);z-index:40;
+    background:#fff;border:1px solid var(--line);border-radius:10px;
+    box-shadow:0 12px 28px rgba(11,60,116,.16);
+    font-size:12.6px;line-height:1.75;color:#4A5D72;
+    padding:12px 14px;max-height:320px;overflow:auto;
+  }
+  .coop-card .en-fold .ans p{margin:0 0 8px;font-size:12.6px;line-height:1.75;text-align:left;}
+  .coop-card .en-fold .ans p:last-child{margin-bottom:0;}
+  .hero-right .card .contact-line{
+    margin:9px 0 0;padding-top:8px;border-top:1px dashed var(--line);
+    font-size:11.6px;line-height:1.55;color:#33465B;text-align:left;
+  }
+  .hero-right .card .contact-line b{color:var(--navy);font-weight:600;}
+  .hero-right .card .contact-line a{word-break:break-all;}
+  .en-title{font-weight:700;letter-spacing:.8px;color:var(--navy);}
+  .card{
+    background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);
+    padding:22px 24px;border:1px solid var(--line);
+  }
+  .card h3{
+    margin:0 0 12px;font-size:17px;color:var(--navy);
+    padding-bottom:9px;border-bottom:1px solid var(--line);
+  }
+  .card p{margin:0 0 12px;font-size:14.3px;color:#33465B;text-align:justify;}
+  .card p:last-child{margin-bottom:0;}
+  .contact-rows{display:flex;flex-direction:column;gap:6px;font-size:14px;}
+  .contact-rows div{color:#33465B;}
+  .contact-rows b{color:var(--navy);font-weight:600;}
+
+  /* ---------- 品系分类 ---------- */
+  .overview-img{
+    display:block;width:100%;border-radius:var(--radius);overflow:hidden;
+    border:1px solid var(--line);box-shadow:var(--shadow);
+    background:#fff;transition:box-shadow .2s,transform .2s;
+  }
+  .overview-img:hover{box-shadow:var(--shadow-hover);transform:translateY(-2px);}
+  .overview-wrap{position:relative;margin-bottom:26px;}
+  .overview-hint{
+    position:absolute;right:14px;bottom:14px;
+    background:rgba(11,60,116,.86);color:#fff;font-size:12.5px;
+    padding:6px 12px;border-radius:20px;pointer-events:none;
+  }
+  .cat-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  }
+  .cat-card{
+    position:relative;display:flex;flex-direction:column;gap:6px;
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 18px 18px;box-shadow:var(--shadow);
+    transition:transform .2s,box-shadow .2s,border-color .2s;
+    min-height:118px;
+  }
+  .cat-card:hover{
+    transform:translateY(-4px);box-shadow:var(--shadow-hover);border-color:#BBD9F0;
+    text-decoration:none;
+  }
+  .cat-card .num{
+    font-size:12px;font-weight:700;color:#fff;background:var(--blue);
+    width:24px;height:24px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;flex:none;
+  }
+  .cat-card .cn{font-size:15px;font-weight:600;color:var(--navy);line-height:1.5;}
+  .cat-card .en{font-size:12px;color:var(--muted);line-height:1.5;}
+  .cat-card .go{
+    margin-top:auto;font-size:12.5px;color:var(--orange);font-weight:600;
+    opacity:0;transform:translateX(-4px);transition:opacity .2s,transform .2s;
+  }
+  .cat-card:hover .go{opacity:1;transform:translateX(0);}
+
+
+  /* ---------- 相关产品 ---------- */
+  .prod-block{margin-bottom:26px;}
+  .prod-block h3{
+    font-size:16.5px;color:var(--navy);margin:0 0 4px;
+  }
+  .prod-block .lead{color:var(--muted);font-size:13.5px;margin:0 0 14px;}
+  .chip-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px;}
+  .chip{
+    position:relative;display:flex;align-items:center;gap:8px;
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:11px 12px;box-shadow:var(--shadow);min-width:0;
+    transition:transform .18s,box-shadow .18s,border-color .18s;
+  }
+  .chip:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:#BBD9F0;text-decoration:none;}
+  .chip .ico{
+    width:26px;height:26px;border-radius:8px;flex:none;
+    background:linear-gradient(135deg,#E9F3FB,#D6E9F8);
+    display:flex;align-items:center;justify-content:center;font-size:13.5px;
+  }
+  .chip .nm{font-size:12.9px;line-height:1.45;color:var(--navy);font-weight:600;word-break:break-word;}
+  .badge{
+    position:absolute;top:-7px;right:-5px;font-size:9.8px;line-height:1;
+    background:var(--orange);color:#fff;padding:3px 6px;border-radius:20px;
+    box-shadow:0 1px 4px rgba(232,128,31,.4);
+  }
+  /* ---------- 关于 JAX ---------- */
+  .about-lead{
+    font-size:14.6px;color:#33465B;margin:0 0 22px;
+    background:#fff;border-left:4px solid var(--orange);border-radius:10px;
+    padding:14px 18px;box-shadow:var(--shadow);
+  }
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:26px;}
+  .stat{
+    background:linear-gradient(160deg,#0B3C74,#155E9E);color:#fff;
+    border-radius:var(--radius);padding:22px 20px;box-shadow:var(--shadow);
+  }
+  .stat .v{font-size:27px;font-weight:700;letter-spacing:.5px;line-height:1.3;}
+  .stat .d{font-size:13.2px;color:#CFE3F5;margin-top:8px;line-height:1.7;}
+  .mile-list{list-style:none;margin:0;padding:0;}
+  .mile-list li{
+    position:relative;background:#fff;border:1px solid var(--line);
+    border-radius:12px;padding:14px 18px 14px 46px;margin-bottom:10px;
+    font-size:14px;color:#33465B;box-shadow:var(--shadow);
+  }
+  .mile-list li::before{
+    content:"◆";position:absolute;left:18px;top:14px;
+    color:var(--orange);font-size:11px;
+  }
+  .btn{
+    display:inline-block;padding:11px 20px;border-radius:26px;font-size:13.8px;
+    background:var(--navy);color:#fff;font-weight:600;
+    transition:background .18s,transform .18s;text-decoration:none;
+  }
+  .btn:hover{background:#155E9E;transform:translateY(-2px);text-decoration:none;color:#fff;}
+  .btn.ghost{background:#fff;color:var(--navy);border:1px solid #C6DCF0;}
+  .btn.ghost:hover{background:#F1F7FD;color:var(--navy);}
+
+  /* ---------- 为什么选 JAX ---------- */
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .why-card{
+    position:relative;border-radius:var(--radius);overflow:hidden;
+    min-height:300px;display:flex;flex-direction:column;justify-content:space-between;
+    box-shadow:var(--shadow);background:linear-gradient(160deg,#0B3C74,#155E9E);
+    transition:transform .22s,box-shadow .22s;isolation:isolate;
+  }
+  .why-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover);}
+  .why-bg{
+    position:absolute;inset:0;background-size:cover;background-position:center;
+    transition:transform .5s ease;z-index:0;
+  }
+  .why-card:hover .why-bg{transform:scale(1.07);}
+  .why-mask{
+    position:absolute;inset:0;z-index:1;
+    background:linear-gradient(180deg,rgba(6,32,63,.72) 0%,rgba(6,32,63,.40) 45%,rgba(6,32,63,.86) 100%);
+  }
+  .why-top{position:relative;z-index:2;padding:20px 20px 0;text-align:center;}
+  .why-char{
+    font-size:62px;font-weight:700;color:#fff;line-height:1.05;
+    text-shadow:0 4px 18px rgba(0,0,0,.45);letter-spacing:4px;
+  }
+  .why-mini{
+    position:relative;z-index:2;padding:0 20px 20px;
+    color:#EAF3FB;font-size:12.8px;line-height:1.65;text-align:center;
+  }
+  .why-mini .line{height:1px;background:rgba(255,255,255,.28);margin:0 8px 12px;}
+  .why-more{
+    position:relative;z-index:2;max-height:0;overflow:hidden;
+    transition:max-height .32s ease,opacity .28s ease,padding .28s ease;
+    opacity:0;background:rgba(6,32,63,.90);
+    font-size:12.6px;line-height:1.75;color:#DCEAF7;padding:0 20px;
+  }
+  .why-card:hover .why-more{max-height:260px;opacity:1;padding:14px 20px;}
+
+  /* ---------- 订购流程 ---------- */
+  .flow-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:34px;}
+  .step{
+    position:relative;background:#fff;border:1px solid var(--line);
+    border-radius:var(--radius);padding:20px 16px;box-shadow:var(--shadow);
+  }
+  .step .sno{
+    font-size:12px;font-weight:700;color:#fff;background:var(--navy);
+    padding:3px 9px;border-radius:20px;display:inline-block;margin-bottom:10px;
+  }
+  .step h4{margin:0 0 8px;font-size:14.5px;color:var(--navy);}
+  .step p{margin:0;font-size:13px;color:#4A5D72;line-height:1.7;}
+  .step p a{word-break:break-all;}
+  details{
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    margin-bottom:10px;box-shadow:var(--shadow);overflow:hidden;
+  }
+  details[open]{border-color:#BBD9F0;}
+  summary{
+    cursor:pointer;padding:15px 44px 15px 18px;font-size:14.2px;font-weight:600;
+    color:var(--navy);list-style:none;position:relative;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:"＋";position:absolute;right:18px;top:14px;
+    color:var(--blue);font-size:15px;font-weight:400;
+  }
+  details[open] summary::after{content:"－";}
+  details .ans{
+    padding:0 18px 16px;font-size:13.8px;color:#3D5065;line-height:1.85;
+    border-top:1px solid #EEF2F6;padding-top:14px;margin-top:-2px;
+  }
+  .cta-bar{
+    margin-top:32px;border-radius:var(--radius);
+    background:linear-gradient(120deg,#0B3C74,#1B84C7);color:#fff;
+    padding:22px 26px;display:flex;flex-wrap:wrap;align-items:center;
+    gap:10px 26px;box-shadow:0 10px 24px rgba(11,60,116,.22);
+  }
+  .cta-bar .t{font-size:15px;font-weight:600;}
+  .cta-bar a{color:#EAF3FB;text-decoration:underline;}
+  .cta-bar span{font-size:14px;color:#DCEAF7;}
+
+  /* ---------- 页脚 ---------- */
+  footer{
+    background:#082C56;color:#B9CFE6;padding:40px 0 22px;font-size:13.2px;
+  }
+  .foot-grid{display:grid;grid-template-columns:1.1fr 1.3fr 1fr;gap:26px;}
+  footer h5{
+    color:#fff;font-size:14px;margin:0 0 10px;font-weight:600;
+  }
+  footer p{margin:0 0 8px;line-height:1.8;}
+  footer a{color:#CFE3F5;}
+  .foot-bottom{
+    margin-top:26px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);
+    font-size:12.2px;color:#8FA9C4;
+  }
+
+  /* ---------- 订购流程：官方版式复刻（1:1 还原 jax.ibiocart.com 首页“订购JAX小鼠”模块） ---------- */
+  #order{background:url("assets/dg-bg.webp") top center / cover no-repeat;}
+  .jax-order-stage{overflow:hidden;}
+  .jax-order{
+    width:1440px;transform-origin:top left;
+    color:#666;font-size:16px;line-height:1.5;
+    font-family:'PingFang SC',-apple-system,BlinkMacSystemFont,"Source Han Sans",'Microsoft YaHei UI','Microsoft YaHei',Arial,sans-serif;
+  }
+  .jax-order .container{width:1440px;margin:0 auto;position:relative;}
+  .jax-order ol,.jax-order ul{list-style:none;margin:0;padding:0;}
+  .jax-order a{color:#666;text-decoration:none;}
+  .jax-order a:hover{color:#159aee;text-decoration:none;}
+  .jax-order img{border:0;max-width:100%;vertical-align:top;}
+  .jax-order p{margin:0;}
+  .jax-order .list{padding-top:10px;}
+  .jax-order .list ul{display:flex;flex-wrap:wrap;margin:0 -24px;}
+  .jax-order .list li{width:20%;padding:0 24px;margin-top:70px;}
+  .jax-order .list li .item{
+    padding:22px;height:130px;min-height:100%;text-align:center;
+    box-shadow:0 8px 32px 0 rgba(24,127,173,.2);background:rgba(255,255,255,.7);
+    border-radius:24px;transition:all .5s ease;
+  }
+  .jax-order .list li .item:hover{background:linear-gradient(90deg,#36b592 0,#0da6b7 22%,#008fd8 58%,#134fa2 100%);}
+  .jax-order .list li .item:hover .tit{color:#fff;}
+  .jax-order .list li .icon img{max-height:48px;}
+  .jax-order .list li .icon .icon1{display:inline-block;}
+  .jax-order .list li .icon .icon2{display:none;}
+  .jax-order .list li .item:hover .icon .icon1{display:none;}
+  .jax-order .list li .item:hover .icon .icon2{display:inline-block;}
+  .jax-order .list li .tit{margin-top:10px;font-weight:400;font-size:24px;color:#333;}
+  .jax-order .list-2{min-height:520px;margin-top:80px;position:relative;}
+  .jax-order .list-2>img{display:block;width:1408px;height:372px;}
+  .jax-order .list-2 .item{color:#153967;position:absolute;}
+  .jax-order .list-2 .item .text{
+    padding-left:12px;padding-bottom:15px;width:162px;
+    background:url("assets/dg-text-bg.png") no-repeat bottom left;background-size:cover;
+  }
+  .jax-order .list-2 .item .text .t-1{font-weight:400;font-size:28px;}
+  .jax-order .list-2 .item .text .t-2{font-weight:400;font-size:18px;line-height:24px;}
+  .jax-order .list-2 .item .text .t-3{padding:5px 0 10px 0;}
+  .jax-order .list-2 .item .text .t-3 span{
+    padding:0 10px;line-height:24px;display:inline-block;font-weight:bold;color:#0f8ddd;
+    background:rgba(93,182,238,.2);border-radius:30px;
+  }
+  .jax-order .list-2 .item .tag{margin-top:12px;}
+  .jax-order .list-2 .item .tag span{
+    color:#fff;padding:0 16px;line-height:36px;height:36px;display:inline-block;
+    background:linear-gradient(90deg,#36b592 0,#0da6b7 22%,#008fd8 58%,#134fa2 100%);
+    box-shadow:0 6px 20px 0 rgba(66,159,154,.4);border-radius:30px;
+  }
+  .jax-order .list-2 .item .tag a{color:#fff;}
+  .jax-order .list-2 .item .tag a:hover{text-decoration:underline;}
+  .jax-order .list-2 .item-1{top:220px;}
+  .jax-order .list-2 .item-2{top:390px;left:220px;}
+  .jax-order .list-2 .item-3{top:220px;left:436px;}
+  .jax-order .list-2 .item-4{top:383px;left:654px;}
+  .jax-order .list-2 .item-5{top:225px;left:872px;}
+  .jax-order .list-2 .item-6{top:383px;left:1092px;}
+  .jax-order .list-2 .item-7{top:225px;left:1309px;}
+  .jax-order .more{margin-top:90px;text-align:center;}
+  .jax-order .more a{
+    color:#fff;font-size:20px;padding:0 10px;min-width:161px;height:54px;line-height:54px;
+    display:inline-block;background:#159aee;border-radius:16px;transition:all .5s ease;
+  }
+  .jax-order .more a:hover{background:#32b2b7;color:#fff;}
+  .jax-order .more img{margin-bottom:5px;vertical-align:middle;margin-left:10px;max-height:7px;display:inline-block;}
+  /* 官方移动端版式（≤1024px）：卡片两列、流程节点转为白底卡片 */
+  @media (max-width:1024px){
+    .jax-order{width:100%;transform:none;}
+    .jax-order .container{width:100%;padding:0 20px;}
+    .jax-order .list ul{margin:0 -10px;}
+    .jax-order .list li{display:flex;align-items:center;padding:0 10px;margin-top:20px;width:50%;}
+    .jax-order .list li .item{padding:30px 20px;min-width:100%;height:auto;}
+    .jax-order .list li:last-child{width:100%;}
+    .jax-order .list-2{margin:0 -10px;margin-top:0;min-height:auto;display:flex;flex-wrap:wrap;}
+    .jax-order .list-2>img{display:none;}
+    .jax-order .list-2 .item{
+      padding:0 10px;margin-top:20px;width:50%;display:flex;text-align:center;
+      left:auto !important;top:auto !important;position:relative !important;
+    }
+    .jax-order .list-2 .item .text{
+      width:100%;min-width:100%;padding:30px;border-radius:20px;
+      background:rgba(255,255,255,.7) !important;
+    }
+    .jax-order .list-2 .item .tag{display:none;}
+    .jax-order .list-2 .item:last-child{width:100%;}
+    .jax-order .more{display:none;margin-top:30px;}
+  }
+  @media (max-width:500px){
+    .jax-order .list li .tit{font-size:15px;}
+    .jax-order .list-2 .item .text .t-1{font-size:15px;margin-top:10px;}
+  }
+  .order-note{margin:22px 0 0;font-size:12.8px;color:var(--muted);line-height:1.75;}
+
+  /* ---------- 顶部导航：官网入口 ---------- */
+  .nav-ext{gap:2px;}
+  .nav-ext a{
+    font-size:12.6px;padding:5px 9px;border-radius:999px;
+    background:rgba(255,255,255,.12);color:#EAF3FB;
+  }
+  .nav-ext a:hover{background:rgba(255,255,255,.24);color:#fff;}
+
+  /* ---------- 明星品系：品系卡片网格 ---------- */
+  .strain-grid{
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;
+  }
+  .strain-card{
+    display:flex;flex-direction:column;gap:8px;min-width:0;
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px 20px 16px;box-shadow:var(--shadow);
+    transition:transform .2s,box-shadow .2s,border-color .2s;
+  }
+  .strain-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:#BBD9F0;}
+  .strain-name{
+    margin:0;font-size:15.5px;color:var(--navy);line-height:1.6;
+    display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;
+    word-break:break-word;overflow-wrap:anywhere;
+  }
+  .strain-no{
+    flex:none;background:#F2F7FC;border:1px solid #DCE9F6;border-radius:999px;
+    padding:3px 10px;font-size:12.6px;font-weight:600;color:#25435F;
+    font-family:"SF Mono",Menlo,Consolas,monospace;letter-spacing:.3px;
+  }
+  .strain-card .strain-row{margin:0;font-size:13.4px;line-height:1.75;color:#33465B;}
+  .strain-card .strain-row b{color:var(--navy);font-weight:600;}
+  .strain-link{
+    margin-top:auto;padding-top:4px;color:var(--orange);font-weight:600;
+    font-size:12.8px;word-break:break-word;overflow-wrap:anywhere;
+  }
+  .strain-link:hover{color:var(--navy);text-decoration:underline;}
+  .strain-more{
+    display:block;margin-top:20px;padding:14px 18px;text-align:center;
+    background:#F2F7FC;border:1px dashed #C8DDF1;border-radius:var(--radius);
+    color:var(--navy);font-size:14px;font-weight:600;
+    transition:background .18s,border-color .18s;
+  }
+  .strain-more:hover{background:#E6F1FB;border-color:#BBD9F0;text-decoration:none;}
+
+  /* ---------- 响应式 ---------- */
+  @media (max-width:1080px){
+    .cat-grid{grid-template-columns:repeat(2,1fr);}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .flow-grid{grid-template-columns:repeat(2,1fr);}
+    .stat-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:900px){
+    /* 窄屏：相关产品品类自动折行 */
+    .chip-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));}
+    /* 窄屏 Hero 改为单列堆叠，DOM 顺序：视频 → JAX 简介 → 关于 JAX 与北京澄天生物 */
+    .hero-grid{display:flex;flex-direction:column;gap:18px;}
+    .video-box{grid-column:auto;}
+    .hero-right{flex-direction:column;gap:18px;}
+    .hero-right .card{flex:0 0 auto;padding:18px 20px;}
+  }
+  @media (min-width:901px) and (max-width:1240px){
+    /* 中等宽度：右列文字更高，视频卡撑满列高、说明文字贴底，保持两列底边齐平 */
+    .video-box{align-self:stretch;display:flex;flex-direction:column;}
+    .video-cap{margin-top:auto;}
+    .coop-top{flex-wrap:wrap;row-gap:2px;}
+    .coop-card .coop-top h3{flex:none;white-space:nowrap;}
+    .coop-links{margin-left:auto;}
+  }
+  @media (max-width:860px){
+    .hero{padding-top:118px;}
+    .navlinks{display:none;}
+    .navlinks.nav-ext{display:flex;margin-left:0;}
+    .topbar .wrap{height:auto;padding-top:8px;padding-bottom:8px;flex-wrap:wrap;}
+    h2{font-size:21px;}
+    section{padding:44px 0;}
+  }
+  @media (max-width:700px){
+    .strain-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .cat-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    .flow-grid{grid-template-columns:1fr;}
+    .why-card{min-height:260px;}
+    .brand span.full{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== 顶部导航 ===================== -->
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span><span>JAX × 北京澄天生物</span></div>
+    <nav class="navlinks">
+      <a href="#intro">JAX简介</a>
+      <a href="#strains">品系分类</a>
+      <a href="#why-jax">为什么选JAX</a>
+      <a href="#stars">明星品系</a>
+      <a href="#products">相关产品</a>
+      <a href="#order">订购流程</a>
+    </nav>
+    <nav class="navlinks nav-ext">
+      <a href="https://mice.jax.org/" target="_blank" rel="noopener">品系查询</a>
+      <a href="https://www.jax.ibiocart.com/order-form.html" target="_blank" rel="noopener">询价下单</a>
+      <a href="https://www.jax.ibiocart.com/cjdgzh.html" target="_blank" rel="noopener">创建订购账户</a>
+      <a href="https://www.jax.ibiocart.com/service-form.html" target="_blank" rel="noopener">客户服务</a>
+      <a href="https://www.jax.ibiocart.com/techniical-support-form.html" target="_blank" rel="noopener">技术支持</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== 2.1 Hero ===================== -->
+<section class="hero" id="intro">
+  <div class="wrap">
+    <div class="hero-grid">
+
+      <!-- 左：视频 -->
+      <div class="video-box">
+        <div class="video-frame">
+          <video src="assets/jax-video.mp4" controls autoplay muted loop playsinline poster="">
+            您的浏览器不支持视频播放，请下载观看：assets/jax-video.mp4
+          </video>
+        </div>
+        <p class="video-cap">视频：How JAX is Reimagining the Future of Medicine（JAX 官方宣传片）</p>
+      </div>
+
+      <!-- 右列：两张卡上下堆叠（flex:1 自适应，底边与左侧视频框齐平） -->
+      <div class="hero-right">
+
+        <!-- 右列上：JAX 简介 -->
+        <div class="card intro-a">
+          <h3>关于 JAX · 杰克森实验室</h3>
+          <p>杰克森实验室（The Jackson Laboratory，JAX）1929 年创立于美国缅因州巴港，是一所独立的非营利性生物医学研究机构，致力于为人类疾病探究寻找精准的基因解决方案。全球已有超过 75 个国家／地区的 1,900 多个组织在使用 JAX® 小鼠及研究服务，遗传特异性小鼠品系超过 13,000 种。自 1983 年起，JAX 成为美国国家癌症研究所（NCI）指定癌症研究中心，全美仅七家机构获此认证。</p>
+        </div>
+
+        <!-- 右列下：关于 JAX 与北京澄天生物 -->
+        <div class="card coop-card" id="about-jax">
+          <div class="coop-top">
+            <h3>关于 JAX 与北京澄天生物</h3>
+            <div class="coop-links">
+              <details class="en-fold">
+                <summary>ENGLISH ANNOUNCEMENT</summary>
+                <div class="ans">
+                  <p class="en-title">ANNOUNCEMENT</p>
+                  <p>We are pleased to announce that iBio Logistics Co., Ltd. (referred to as "iBL", a wholly owned subsidiary of Lab Direct China Limited) will serve as the official distributor of The Jackson Laboratory (JAX) products in Mainland China.</p>
+                  <p>iBL will continue to be the only authorized provider of products &amp; support in the region. This strengthened partnership reflects our shared commitment to advancing biomedical research by expanding access to JAX's high-quality mouse models—critical tools that have contributed to numerous medical breakthroughs. With deep industry expertise and a strong distribution network, iBL is well-positioned to support the growing needs of the scientific community in China. We look forward to continuing our global mission to improve human health. For inquiries regarding JAX products in China, please contact at: iBio Logistics Co Ltd.</p>
+                  <p>jax-orderquest@ibio-life.com ｜ Phone: 400-693-5700 ｜ https://www.jax.ibiocart.com</p>
+                  <p>Thank you for your continued trust in JAX. We are excited to welcome iBL to our global distributor network.</p>
+                </div>
+              </details>
+              <a class="coop-src" href="https://www.jax.ibiocart.com/hezuo.html" target="_blank" rel="noopener">查看官网原文 →</a>
+            </div>
+          </div>
+
+          <p>北京澄天生物科技有限公司（泉心泉意生命科学有限公司全资子公司，简称澄天生物 / iBL）是 The Jackson Laboratory（JAX）在中国大陆地区的官方代理商，也是该地区唯一授权的 JAX 产品与服务提供商。双方战略合作，旨在让推动无数医药学突破的关键工具——JAX 高品质小鼠模型，惠及更多中国科研工作者，加速中国生物医药的研究和发展。</p>
+          <p class="contact-line"><b>询价下单 / 技术咨询：</b>400-693-5700 ｜ <a href="mailto:jax-orderquest@ibio-life.com">jax-orderquest@ibio-life.com</a> ｜ <a href="https://www.jax.ibiocart.com/" target="_blank" rel="noopener">https://www.jax.ibiocart.com/</a></p>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2.2 品系分类 ===================== -->
+<section id="strains">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>JAX 小鼠品系分类</h2>
+      <p class="sub">JAX 提供超过 13,000 种遗传背景明确的品系，按疾病与研究领域分为八类；点击下方卡片可前往澄天生物 JAX 官方平台查看对应领域的品系。</p>
+    </div>
+
+    <div class="cat-grid">
+      <a class="cat-card" href="https://www.jax.ibiocart.com/featured_mice/" target="_blank" rel="noopener">
+        <span class="num">1</span>
+        <span class="cn">近交系/远交系</span>
+        <span class="en">Inbred / Distant-bred</span>
+        <span class="go">查看详情 →</span>
+      </a>
+      <a class="cat-card" href="https://www.jax.ibiocart.com/product2/" target="_blank" rel="noopener">
+        <span class="num">2</span>
+        <span class="cn">罕见病模型</span>
+        <span class="en">Rare disease model</span>
+        <span class="go">查看详情 →</span>
+      </a>
+      <a class="cat-card" href="https://www.jax.ibiocart.com/product3/" target="_blank" rel="noopener">
+        <span class="num">3</span>
+        <span class="cn">眼科疾病模型</span>
+        <span class="en">Ophthalmic disease model</span>
+        <span class="go">查看详情 →</span>
+      </a>
+      <a class="cat-card" href="https://www.jax.ibiocart.com/product4/" target="_blank" rel="noopener">
+        <span class="num">4</span>
+        <span class="cn">代谢疾病模型</span>
+        <span class="en">Metabolic disease model</span>
+        <span class="go">查看详情 →</span>
+      </a>
+      <a class="cat-card" href="https://www.jax.ibiocart.com/product5/" target="_blank" rel="noopener">
+        <span class="num">5</span>
+        <span class="cn">神经退行性疾病模型</span>
+        <span class="en">Neurodegenerative disease model</span>
+        <span class="go">查看详情 →</span>
+      </a>
+      <a class="cat-card" href="https://www.jax.ibiocart.com/product6/" target="_blank" rel="noopener">
+        <span class="num">6</span>
+        <span class="cn">免疫缺陷小鼠模型</span>
+        <span class="en">Immunodeficient mouse model</span>
+        <span class="go">查看详情 →</span>
+      </a>
+      <a class="cat-card" href="https://www.jax.ibiocart.com/product7/" target="_blank" rel="noopener">
+        <span class="num">7</span>
+        <span class="cn">免疫/肿瘤研究工具小鼠</span>
+        <span class="en">Immune / Tumor research tool mice</span>
+        <span class="go">查看详情 →</span>
+      </a>
+      <a class="cat-card" href="https://www.jax.ibiocart.com/product8/" target="_blank" rel="noopener">
+        <span class="num">8</span>
+        <span class="cn">自身免疫性疾病模型</span>
+        <span class="en">Autoimmune disease model</span>
+        <span class="go">查看详情 →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2.3 为什么选择 JAX ===================== -->
+<section id="why-jax">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>为什么选择 JAX 小鼠</h2>
+      <p class="sub">JAX 小鼠是动物模型研究的行业标准，运用精确的基因组学解决方案来加深对人类疾病的认识。</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-bg" style="background-image:url('assets/why-1.jpg');"></div>
+        <div class="why-mask"></div>
+        <div class="why-top"><div class="why-char">多</div></div>
+        <div class="why-mini"><div class="line"></div>13,000+ 小鼠品系，海量文献引用</div>
+        <div class="why-more">全球超过 75 个国家／地区的 1,900 多个组织正在使用 JAX® 小鼠与研究服务，13,000+ 遗传背景精确的品系覆盖各类疾病研究场景，被大量高影响力文献引用。</div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-bg" style="background-image:url('assets/why-2.jpg');"></div>
+        <div class="why-mask"></div>
+        <div class="why-top"><div class="why-char">全</div></div>
+        <div class="why-mini"><div class="line"></div>表型数据全面，有力支撑研究</div>
+        <div class="why-more">JAX 小鼠表型数据全面、表征充分，基因型与表型信息可查可溯，为疾病建模与药效评价提供扎实的数据支撑。</div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-bg" style="background-image:url('assets/why-3.jpg');"></div>
+        <div class="why-mask"></div>
+        <div class="why-top"><div class="why-char">清</div></div>
+        <div class="why-mini"><div class="line"></div>遗传背景清晰，质量控制严谨</div>
+        <div class="why-more">遗传背景清晰可控，配合苛刻的遗传质量控制流程，确保实验数据的可重复性与可靠性。</div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-bg" style="background-image:url('assets/why-4.jpg');"></div>
+        <div class="why-mask"></div>
+        <div class="why-top"><div class="why-char">严</div></div>
+        <div class="why-mini"><div class="line"></div>健康监测严格，数据详尽可查</div>
+        <div class="why-more">执行严格的 JAX 动物健康计划，对传染病原体进行常态化广泛监测，健康监测报告定期发布、详尽可查。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2.4 明星品系 ===================== -->
+<section id="stars">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>JAX 明星品系</h2>
+      <p class="sub">以下 24 个品系为 JAX 常用明星品系：品系号即 JAX 官方货号，点击「详情」可跳转 JAX 官方品系页面查看。如需检索更多品系，可使用本区块底部的 JAX 品系库入口。</p>
+    </div>
+
+    <div class="strain-grid">
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【000664】</span>C57BL/6J</h3>
+        <p class="strain-row"><b>应用：</b>广泛，如心血管、发育生物学、遗传学等</p>
+        <p class="strain-row"><b>特色：</b>首个完成基因组测序最常用的近交系</p>
+        <a class="strain-link" href="https://www.jax.org/strain/000664" target="_blank" rel="noopener">详情：000664 - B6 Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【000928】</span>CAST (CAST/EiJ)</h3>
+        <p class="strain-row"><b>应用：</b>遗传作图、进化与系统学研究</p>
+        <p class="strain-row"><b>特色：</b>野鼠来源近交系，与普通实验室小鼠在多个遗传位点及多种表型上存在差异，对黄病毒感染具有抗性</p>
+        <a class="strain-link" href="https://www.jax.org/strain/000928" target="_blank" rel="noopener">详情：000928 - CAST Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【002232】</span>PAHenu2 (BTBR-Pahenu2/J)</h3>
+        <p class="strain-row"><b>应用：</b>严重苯丙酮尿症动物模型</p>
+        <p class="strain-row"><b>特色：</b>化学诱变获得的c.788T&gt;C导致F263S单氨基酸取代，纯合子中苯丙氨酸羟化酶催化活性显著降低</p>
+        <a class="strain-link" href="https://www.jax.org/strain/002232" target="_blank" rel="noopener">详情：002232 - PAH[enu2] Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【001976】</span>NOD (NOD/ShiLtJ)</h3>
+        <p class="strain-row"><b>应用：</b>一型糖尿病经典模型</p>
+        <p class="strain-row"><b>特色：</b>高血糖、胰岛素含量下降和胰岛白细胞浸润为特征的糖尿病表型</p>
+        <a class="strain-link" href="https://www.jax.org/strain/001976" target="_blank" rel="noopener">详情：001976 - NOD Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【000642】</span>BKS db (BKS.Cg-Dock7m +/+ Leprdb/J)</h3>
+        <p class="strain-row"><b>应用：</b>2型糖尿病及肥胖动物模型</p>
+        <p class="strain-row"><b>特色：</b>BKS遗传背景下，小鼠具有严重的肥胖、高血糖和胰腺β细胞萎缩表型</p>
+        <a class="strain-link" href="https://www.jax.org/strain/000642" target="_blank" rel="noopener">详情：000642 - Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【013062】</span>NSGS, NSG-SGM3 (NOD.Cg-Prkdcscid Il2rgtm1Wjl Tg(CMV-IL3,CSF2,KITLG)1Eav/MloySzJ)</h3>
+        <p class="strain-row"><b>应用：</b>肿瘤移植（尤其是AML）、免疫系统人源化</p>
+        <p class="strain-row"><b>特色：</b>表达三种人源细胞因子（IL3, GM-CSF (CSF2), SCF (KITLG)），可更好地支持髓系细胞和调节性T细胞分化</p>
+        <a class="strain-link" href="https://www.jax.org/strain/013062" target="_blank" rel="noopener">详情：013062 - NSG-SGM3 Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【005557】</span>NSG™ (NOD.Cg-Prkdcscid Il2rgtm1Wjl/SzJ)</h3>
+        <p class="strain-row"><b>应用：</b>肿瘤移植、免疫系统人源化、干细胞移植</p>
+        <p class="strain-row"><b>特色：</b>重度免疫缺陷，支持多种人源实体瘤和血液肿瘤移植；支持长时程移植研究，中位生存期超过89周</p>
+        <a class="strain-link" href="https://www.jax.org/strain/005557" target="_blank" rel="noopener">详情：005557 - NSG Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【026622】</span>NBSGW (NOD.Cg-KitW-41J Tyr + Prkdcscid Il2rgtm1Wjl/ThomJ)</h3>
+        <p class="strain-row"><b>应用：</b>肿瘤移植、免疫系统人源化、干细胞移植</p>
+        <p class="strain-row"><b>特色：</b>重度免疫缺陷，可在无辐照的条件下支持人源组织移植，人源化小鼠中人红细胞增多（骨髓）</p>
+        <a class="strain-link" href="https://www.jax.org/strain/026622" target="_blank" rel="noopener">详情：026622 - NBSGW Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【100008】</span>NZB/W (NZBWF1/J)</h3>
+        <p class="strain-row"><b>应用：</b>系统性红斑狼疮经典模型</p>
+        <p class="strain-row"><b>特色：</b>具有高水平的抗核抗体、溶血性贫血、蛋白尿和免疫复合物肾小球肾炎等表型</p>
+        <a class="strain-link" href="https://www.jax.org/strain/100008" target="_blank" rel="noopener">详情：100008 - NZB/W Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【000485】</span>MRL-lpr (MRL/MpJ-Faslpr/J)</h3>
+        <p class="strain-row"><b>应用：</b>系统性红斑狼疮经典模型</p>
+        <p class="strain-row"><b>特色：</b>具有异常T细胞增生相关的淋巴结肿大、关节炎和免疫复合物肾小球肾炎等表型</p>
+        <a class="strain-link" href="https://www.jax.org/strain/000485" target="_blank" rel="noopener">详情：000485 - MRL-lpr Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【001162】</span>bm12 (B6(C)-H2-Ab1bm12/KhEgJ)</h3>
+        <p class="strain-row"><b>应用：</b>将bm12小鼠淋巴细胞转移至C57BL/6小鼠体内，可获得系统性红斑狼疮模型</p>
+        <p class="strain-row"><b>特色：</b>bm12突变与实验性自身免疫性重症肌无力的抗性增强相关；在免疫学研究中应用广泛</p>
+        <a class="strain-link" href="https://www.jax.org/strain/001162" target="_blank" rel="noopener">详情：001162 - bm12 Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【000740】</span>BXSB/MpJ</h3>
+        <p class="strain-row"><b>应用：</b>系统性红斑狼疮（SLE）研究</p>
+        <p class="strain-row"><b>特色：</b>Y 染色体 Yaa 突变致自发性狼疮样自身免疫病，雄性发病加速，平均 6 月龄发病</p>
+        <a class="strain-link" href="https://www.jax.org/strain/000740" target="_blank" rel="noopener">详情：000740 - BXSB/MpJ Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【014565】</span>hFcRn Tg32 (B6.Cg-Fcgrttm1Dcr Tg(FCGRT)32Dcr/DcrJ)</h3>
+        <p class="strain-row"><b>应用：</b>治疗性抗体的药代动力学及药效学评估</p>
+        <p class="strain-row"><b>特色：</b>具有对人IgG最高、最接近于人的保护作用，是测定最大半衰期的最佳模型</p>
+        <a class="strain-link" href="https://www.jax.org/strain/014565" target="_blank" rel="noopener">详情：014565 - FcRn-/- hFcRn (32) Tg , hFcRn Tg32 , Tg32 , HuPK™ Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【018441】</span>B6.Cg-Fcgrttm1Dcr Prkdcscid Tg(FCGRT)32Dcr/DcrJ</h3>
+        <p class="strain-row"><b>应用：</b>预测在小鼠中具有强免疫原性的抗体类药物（即Fc融合双特异性抗体）的临床半衰期</p>
+        <p class="strain-row"><b>特色：</b>人源 FCGRT 基因呈生理性表达，且缺乏成熟B细胞,对人源化分子无ADA反应，可对高度工程化分子进行PK和PD评价</p>
+        <a class="strain-link" href="https://www.jax.org/strain/018441" target="_blank" rel="noopener">详情：018441-hFcRn Tg32 SCID Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【029686】</span>B6.Cg-Tg(FCGRT)32Dcr Fcgrt&lt;tm1Dcr&gt; Ighg1&lt;em2(IGHG1)Mvw&gt;/MvwJ</h3>
+        <p class="strain-row"><b>应用：</b>当FcRn作为治疗靶点时，提供稳态浓度的人IgG1作为PD读数指标</p>
+        <p class="strain-row"><b>特色：</b>表达人IgG1替代小鼠IgG1，具有生理相关性的人IgG1表达</p>
+        <a class="strain-link" href="https://www.jax.org/strain/029686" target="_blank" rel="noopener">详情：029686-Tg32-hFc , HuPK™ Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【004919】</span>B6.Cg-Fcgrt&lt;tm1Dcr&gt; Tg(CAG-FCGRT)276Dcr/DcrJ</h3>
+        <p class="strain-row"><b>应用：</b>为Tg32无法区分的受试分子提供PK差异化，且体内PK研究周期更短，尤其适用于长半衰期Fc变体</p>
+        <p class="strain-row"><b>特色：</b>编码FcRn蛋白的人源 FCGRT 基因呈全身性表达</p>
+        <a class="strain-link" href="https://www.jax.org/strain/004919" target="_blank" rel="noopener">详情：004919-hFcRn Tg276 Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【006554】</span>5xFAD (B6SJL-Tg(APPSwFlLon,PSEN1*M146L*L286V)6799Vas/Mmjax)</h3>
+        <p class="strain-row"><b>应用：</b>阿尔茨海默病经典模型，也可用于研究Aβ42导致的神经退行性变和淀粉样斑块沉积</p>
+        <p class="strain-row"><b>特色：</b>具有五个突变位点的人源APP（Swedish (K670N, M671L), Florida (I716V), London (V717I)）和PS1蛋白（M146L, L286V）</p>
+        <a class="strain-link" href="https://www.jax.org/strain/006554" target="_blank" rel="noopener">详情：034840 - 5XFAD Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【008169】</span>B6;C3-Tg(Prnp-MAPT*P301S)PS19Vle/J（Tau P301S / PS19）</h3>
+        <p class="strain-row"><b>应用：</b>神经原纤维缠结、神经退行性 tau 病变与阿尔茨海默病研究</p>
+        <p class="strain-row"><b>特色：</b>5 倍过表达 P301S 人源 tau，进行性 tau 病理与肢体瘫痪</p>
+        <a class="strain-link" href="https://www.jax.org/strain/008169" target="_blank" rel="noopener">详情：008169 - Tau P301S Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【008197】</span>FVB/N-Tg(HTT*97Q)IXwy/J（BACHD）</h3>
+        <p class="strain-row"><b>应用：</b>亨廷顿病（Huntington&#39;s disease）</p>
+        <p class="strain-row"><b>特色：</b>全长人突变 huntingtin（97 个 CAA-CAG 重复），Cre 可条件性关闭</p>
+        <a class="strain-link" href="https://www.jax.org/strain/008197" target="_blank" rel="noopener">详情：008197 - BACHD Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【001801】</span>C57BL/10ScSn-Dmdmdx/J（mdx）</h3>
+        <p class="strain-row"><b>应用：</b>杜氏肌营养不良症（DMD）</p>
+        <p class="strain-row"><b>特色：</b>不表达 dystrophin，3 周龄起进行性肌坏死伴再生</p>
+        <a class="strain-link" href="https://www.jax.org/strain/001801" target="_blank" rel="noopener">详情：001801 - mdx Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【000659】</span>C3H/HeJ（C3H）</h3>
+        <p class="strain-row"><b>应用：</b>通用品系，用于癌症、感染病、感觉神经与心血管研究（官网 Disease Term：retinitis pigmentosa 40）</p>
+        <p class="strain-row"><b>特色：</b>Tlr4Lps-d 突变致内毒素耐受、对革兰阴性菌高度易感；Pde6brd1 纯合，断奶前失明</p>
+        <a class="strain-link" href="https://www.jax.org/strain/000659" target="_blank" rel="noopener">详情：000659 - C3H/HeJ Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【002726】</span>B6SJL-Tg(SOD1*G93A)1Gur/J（SOD1-G93A）</h3>
+        <p class="strain-row"><b>应用：</b>肌萎缩侧索硬化（ALS，渐冻症）</p>
+        <p class="strain-row"><b>特色：</b>表达 G93A 突变人源 SOD1，脊髓运动神经元丢失致肢体瘫痪，寿命显著缩短</p>
+        <a class="strain-link" href="https://www.jax.org/strain/002726" target="_blank" rel="noopener">详情：002726 - SOD1-G93A Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【032487】</span>C57BL/6-Crbn&lt;tm1.1Ble&gt;/J</h3>
+        <p class="strain-row"><b>应用：</b>研究B细胞恶性肿瘤和沙利度胺类药物毒性。</p>
+        <p class="strain-row"><b>特色：</b>Crbn I391V突变赋予对沙利度胺类药物的体内敏感性。</p>
+        <a class="strain-link" href="https://www.jax.org/strain/032487" target="_blank" rel="noopener">详情：032487-CrbnI391V Strain Details</a>
+      </article>
+      <article class="strain-card">
+        <h3 class="strain-name"><span class="strain-no">【005023】</span>pmel-1 (B6.Cg-Thy1a/Cy Tg(TcraTcrb)8Rest/J)</h3>
+        <p class="strain-row"><b>应用：</b>免疫治疗，体内 T 细胞生物学</p>
+        <p class="strain-row"><b>特色：</b>表达重排的T细胞受体，特异性识别PMEL小鼠同源物</p>
+        <a class="strain-link" href="https://www.jax.org/strain/005023" target="_blank" rel="noopener">详情：005023 - pmel-1 Strain Details</a>
+      </article>
+    </div>
+
+    <a class="strain-more" href="https://mice.jax.org/" target="_blank" rel="noopener">点击链接，搜索更多品系：JAXMice Search</a>
+  </div>
+</section>
+
+<!-- ===================== 2.5 相关产品 ===================== -->
+<section id="products">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>相关产品</h2>
+      <p class="sub">澄天生物同时提供生命科学实验室通用试剂耗材与实验小鼠配套用品的一站式供应，覆盖实验全流程所需。</p>
+    </div>
+
+    <div class="prod-block">
+      <h3>① 实验通用试剂耗材</h3>
+      <p class="lead">实验室日常消耗品与常规试剂，覆盖样品处理、细胞培养、分装保存等环节。</p>
+      <div class="chip-grid">
+        <a class="chip" href="https://www.jax.ibiocart.com/" target="_blank" rel="noopener"><span class="badge">链接待替换</span><span class="ico">◈</span><span class="nm">枪头</span></a>
+        <a class="chip" href="https://www.jax.ibiocart.com/" target="_blank" rel="noopener"><span class="badge">链接待替换</span><span class="ico">▦</span><span class="nm">细胞培养板</span></a>
+        <a class="chip" href="https://www.jax.ibiocart.com/" target="_blank" rel="noopener"><span class="badge">链接待替换</span><span class="ico">◲</span><span class="nm">离心管</span></a>
+        <a class="chip" href="https://www.jax.ibiocart.com/" target="_blank" rel="noopener"><span class="badge">链接待替换</span><span class="ico">▤</span><span class="nm">培养瓶</span></a>
+        <a class="chip" href="https://www.jax.ibiocart.com/" target="_blank" rel="noopener"><span class="badge">链接待替换</span><span class="ico">◧</span><span class="nm">血清移液管</span></a>
+        <a class="chip" href="https://www.jax.ibiocart.com/" target="_blank" rel="noopener"><span class="badge">链接待替换</span><span class="ico">◉</span><span class="nm">冻存管</span></a>
+        <a class="chip" href="https://www.jax.ibiocart.com/" target="_blank" rel="noopener"><span class="badge">链接待替换</span><span class="ico">◐</span><span class="nm">试剂（培养基、缓冲液）</span></a>
+      </div>
+    </div>
+
+    <div class="prod-block">
+      <h3>② 小鼠相关产品与用品</h3>
+      <p class="lead">围绕实验小鼠饲养与福利的配套用品，保障动物健康与实验稳定性。</p>
+      <div class="chip-grid">
+        <a class="chip" href="https://www.jax.ibiocart.com/" target="_blank" rel="noopener"><span class="badge">链接待替换</span><span class="ico">◆</span><span class="nm">小鼠饲料</span></a>
+        <a class="chip" href="https://www.jax.ibiocart.com/" target="_blank" rel="noopener"><span class="badge">链接待替换</span><span class="ico">◇</span><span class="nm">饮用水与饮水瓶</span></a>
+        <a class="chip" href="https://www.jax.ibiocart.com/" target="_blank" rel="noopener"><span class="badge">链接待替换</span><span class="ico">◍</span><span class="nm">水凝胶</span></a>
+        <a class="chip" href="https://www.jax.ibiocart.com/" target="_blank" rel="noopener"><span class="badge">链接待替换</span><span class="ico">▢</span><span class="nm">鼠笼与 IVC 笼具</span></a>
+        <a class="chip" href="https://www.jax.ibiocart.com/" target="_blank" rel="noopener"><span class="badge">链接待替换</span><span class="ico">▩</span><span class="nm">垫料</span></a>
+        <a class="chip" href="https://www.jax.ibiocart.com/" target="_blank" rel="noopener"><span class="badge">链接待替换</span><span class="ico">✿</span><span class="nm">环境丰容玩具</span></a>
+        <a class="chip" href="https://www.jax.ibiocart.com/" target="_blank" rel="noopener"><span class="badge">链接待替换</span><span class="ico">◼</span><span class="nm">耳标 / 标记用品</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2.7 订购流程 ===================== -->
+<section id="order">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>JAX 小鼠订购流程</h2>
+      <p class="sub">自询价下单到送抵客户共 7 步，各环节参考耗时一并标注（内容来源：澄天生物 JAX 官方平台“订购及履约流程”页 jax.ibiocart.com/dglc.html）。</p>
+    </div>
+
+    <div class="jax-order-stage">
+      <div class="jax-order" id="jaxOrder">
+        <div class="container">
+          <div class="list">
+            <ul>
+              <li>
+                <div class="item">
+                  <a href="https://mice.jax.org/" target="_blank" rel="noopener">
+                    <div class="icon">
+                      <img class="icon1" src="assets/dg-icon-1.webp" alt="品系查询">
+                      <img class="icon2" src="assets/dg-icon-1-hover.png" alt="品系查询">
+                    </div>
+                    <div class="tit">品系查询</div>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <a href="https://www.jax.ibiocart.com/order-form.html" target="_blank" rel="noopener">
+                    <div class="icon">
+                      <img class="icon1" src="assets/dg-icon-2.webp" alt="询价下单">
+                      <img class="icon2" src="assets/dg-icon-2-hover.png" alt="询价下单">
+                    </div>
+                    <div class="tit">询价下单</div>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <a href="https://www.jax.ibiocart.com/cjdgzh.html" target="_blank" rel="noopener">
+                    <div class="icon">
+                      <img class="icon1" src="assets/dg-icon-3.webp" alt="创建订购账户">
+                      <img class="icon2" src="assets/dg-icon-3-hover.png" alt="创建订购账户">
+                    </div>
+                    <div class="tit">创建订购账户</div>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <a href="https://www.jax.ibiocart.com/service-form.html" target="_blank" rel="noopener">
+                    <div class="icon">
+                      <img class="icon1" src="assets/dg-icon-4.webp" alt="客户服务">
+                      <img class="icon2" src="assets/dg-icon-4-hover.png" alt="客户服务">
+                    </div>
+                    <div class="tit">客户服务</div>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <a href="https://www.jax.ibiocart.com/techniical-support-form.html" target="_blank" rel="noopener">
+                    <div class="icon">
+                      <img class="icon1" src="assets/dg-icon-5.webp" alt="技术支持">
+                      <img class="icon2" src="assets/dg-icon-5-hover.png" alt="技术支持">
+                    </div>
+                    <div class="tit">技术支持</div>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="list-2">
+            <img src="assets/dg-line.webp" alt="JAX 小鼠订购流程：询价下单 → 发运通知 → 国际运输 → 通关查验 → 检疫隔离 → 国内运输 → 送抵客户">
+        <div class="item item-1">
+          <div class="text">
+            <p class="t-1">询价下单</p>
+            <p class="t-2">咨询价格、货期后 下单订购</p>
+          </div>
+          <div class="tag">
+            <span><a href="https://www.jax.org/about-us/legal-information/terms-and-conditions-of-product-use" target="_blank" rel="noopener">查看JAX销售条款</a></span>
+          </div>
+        </div>
+        <div class="item item-2">
+          <div class="text">
+            <p class="t-1">发运通知</p>
+            <p class="t-2">对交付时间予以确认或更新</p>
+          </div>
+        </div>
+        <div class="item item-3">
+          <div class="text">
+            <p class="t-1">国际运输</p>
+            <p class="t-3"><span>耗时3天</span></p>
+            <p class="t-2">美国境内及中美之间运输</p>
+          </div>
+        </div>
+        <div class="item item-4">
+          <div class="text">
+            <p class="t-1">通关查验</p>
+            <p class="t-3"><span>耗时1天</span></p>
+            <p class="t-2">抵岸当天进行通关查验</p>
+          </div>
+        </div>
+        <div class="item item-5">
+          <div class="text">
+            <p class="t-1">检疫隔离</p>
+            <p class="t-3"><span>耗时14天</span></p>
+            <p class="t-2">于JAX认证隔离场进行隔离</p>
+          </div>
+          <div class="tag">
+            <span><a href="https://www.jax.ibiocart.com/dwjcbg/" target="_blank" rel="noopener">查看隔离场检疫报告</a></span>
+          </div>
+        </div>
+        <div class="item item-6">
+          <div class="text">
+            <p class="t-1">国内运输</p>
+            <p class="t-3"><span>耗时1-3天</span></p>
+            <p class="t-2">陆运或空运送达<br>客户指定地点</p>
+          </div>
+        </div>
+        <div class="item item-7">
+          <div class="text">
+            <p class="t-1">送抵客户</p>
+            <p class="t-2">客户签收并确认</p>
+          </div>
+        </div>
+          </div>
+          <div class="more">
+            <a href="https://www.jax.ibiocart.com/dglc.html" target="_blank" rel="noopener">查看更多<img src="assets/dg-more-arrow.webp" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="order-note">本模块按澄天生物 JAX 官方平台（jax.ibiocart.com）首页「订购JAX小鼠」版式等比例还原，点击「查看更多」进入官方订购及履约流程页。</p>
+
+    <div class="cta-bar">
+      <span class="t">咨询 / 下单 / 技术支持</span>
+      <span>400-693-5700</span>
+      <span>｜</span>
+      <a href="mailto:jax-orderquest@ibio-life.com">jax-orderquest@ibio-life.com</a>
+      <span>｜</span>
+      <a href="https://www.jax.ibiocart.com/" target="_blank" rel="noopener">https://www.jax.ibiocart.com/</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2.8 页脚 ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h5>北京澄天生物科技有限公司</h5>
+        <p>（iBio Logistics Co., Ltd.）</p>
+        <p>JAX 中国大陆地区唯一官方授权代理</p>
+      </div>
+      <div>
+        <h5>办公地址</h5>
+        <p>上海办公室：上海市浦东新区盛荣路 388 弄 1 号楼 7 楼</p>
+        <p>北京办公室：北京市昌平区生命科学园医科路 9 号院 2 号楼 8 层 801 室</p>
+      </div>
+      <div>
+        <h5>联系我们</h5>
+        <p>客服工作时间 9:00–17:00（周一至周五，法定节假日除外）</p>
+        <p>技术邮箱：<a href="mailto:micetech@jax.org.cn">micetech@jax.org.cn</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      本页面为演示 Demo，用于内部展示，最终信息以澄天生物 JAX 官方平台发布为准。
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* 订购流程复刻模块：按容器宽度等比缩放官方 1440px 版式 */
+  (function(){
+    var box = document.getElementById('jaxOrder');
+    if(!box) return;
+    var stage = box.parentNode;
+    function fit(){
+      if(window.innerWidth <= 1024){
+        box.style.transform = '';
+        stage.style.height = '';
+        return;
+      }
+      var w = stage.clientWidth;
+      var sc = Math.min(1, w / 1440);
+      box.style.transform = 'scale(' + sc + ')';
+      stage.style.height = Math.ceil(box.offsetHeight * sc) + 'px';
+    }
+    fit();
+    window.addEventListener('resize', fit);
+    window.addEventListener('load', fit);
+    setTimeout(fit, 300);
+  })();
+</script>
+<script>
+  /* 视频加载失败提示 */
+  (function(){
+    var v = document.querySelector('.video-frame video');
+    if(!v) return;
+    var tip = document.createElement('div');
+    tip.className = 'video-loading';
+    tip.textContent = '视频加载中…';
+    v.parentNode.insertBefore(tip, v);
+    var hide = function(){ if(tip && tip.parentNode) tip.parentNode.removeChild(tip); };
+    v.addEventListener('loadeddata', hide);
+    v.addEventListener('canplay', hide);
+    v.addEventListener('error', function(){
+      tip.textContent = '视频文件未找到（assets/jax-video.mp4），请确认资源已放入 assets 目录。';
+    });
+  })();
+
+</script>
+</body>
+</html>
