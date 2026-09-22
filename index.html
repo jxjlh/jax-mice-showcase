@@ -149,13 +149,14 @@
   }
   .hero-right .card .contact-line b{color:var(--navy);font-weight:600;}
   .hero-right .card .contact-line a{word-break:break-all;}
-  .hero-right .card .contact-line svg.ico{
+  /* 尾部订购横条三项前的小图标（电话 / 邮箱 / 官网），复用行内块整体折行防止孤立图标 */
+  .cta-bar svg.ico{
     width:14px;height:14px;
     vertical-align:-2px;margin-right:3px;
     fill:none;stroke:currentColor;stroke-width:1.8;
     stroke-linecap:round;stroke-linejoin:round;
   }
-  .hero-right .card .contact-line .ci{display:inline-block;}
+  .cta-bar .ci{display:inline-block;}
   .en-title{font-weight:700;letter-spacing:.8px;color:var(--navy);}
   .card{
     background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);
@@ -613,7 +614,7 @@
           </div>
 
           <p>北京澄天生物科技有限公司（泉心泉意生命科学有限公司全资子公司，简称澄天生物 / iBL）是 The Jackson Laboratory（JAX）在中国大陆地区的官方代理商，也是该地区唯一授权的 JAX 产品与服务提供商。双方战略合作，旨在让推动无数医药学突破的关键工具——JAX 高品质小鼠模型，惠及更多中国科研工作者，加速中国生物医药的研究和发展。</p>
-          <p class="contact-line"><b>询价下单 / 技术咨询：</b><span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>400-693-5700</span> ｜ <span class="ci"><a href="mailto:jax-orderquest@ibio-life.com"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>jax-orderquest@ibio-life.com</a></span> ｜ <span class="ci"><a href="https://www.jax.ibiocart.com/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>https://www.jax.ibiocart.com/</a></span></p>
+          <p class="contact-line"><b>询价下单 / 技术咨询：</b>400-693-5700 ｜ <a href="mailto:jax-orderquest@ibio-life.com">jax-orderquest@ibio-life.com</a> ｜ <a href="https://www.jax.ibiocart.com/" target="_blank" rel="noopener">https://www.jax.ibiocart.com/</a></p>
         </div>
 
       </div>
@@ -1061,11 +1062,11 @@
 
     <div class="cta-bar">
       <span class="t">咨询 / 下单 / 技术支持</span>
-      <span>400-693-5700</span>
+      <span class="ci"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>400-693-5700</span>
       <span>｜</span>
-      <a href="mailto:jax-orderquest@ibio-life.com">jax-orderquest@ibio-life.com</a>
+      <a href="mailto:jax-orderquest@ibio-life.com"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>jax-orderquest@ibio-life.com</a>
       <span>｜</span>
-      <a href="https://www.jax.ibiocart.com/" target="_blank" rel="noopener">https://www.jax.ibiocart.com/</a>
+      <a href="https://www.jax.ibiocart.com/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>https://www.jax.ibiocart.com/</a>
     </div>
   </div>
 </section>
